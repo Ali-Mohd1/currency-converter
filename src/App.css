@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+main {
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
+  background: #000;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.input-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.input-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-container input,
+.input-container select {
+  background: #333;
+  color: #fff;
+  height: 42px;
+  border: 1px solid hsl(0, 0%, 80%, 0.1);
+  padding: 0 15px;
+}
+.input-container p {
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loading {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .input-col {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .input-container input,
+  .input-container select {
+    width: 100%;
   }
 }
