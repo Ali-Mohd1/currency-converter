@@ -38,21 +38,23 @@ export default function App() {
   return (
     <main>
       {isLoading ? (
-        <p className="loading">⏰ Loading...</p>
+        <p className="text-2xl font-medium text-white">⏰ Loading...</p>
       ) : (
         <div className="input-container">
-          <h2>Currency Converter</h2>
-          <div className="input-col">
+          <h2 className="text-5xl font-bold text-white">Currency Converter</h2>
+          <div className="mt-4 w-full flex border border-white border-opacity-30 rounded-md bg-white backdrop-blur-3xl bg-opacity-20">
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(Number(e.target.value))}
               disabled={isLoading}
+              className="focus:outline-none flex flex-1 py-3 px-4  text-white h-14 bg-transparent text-lg"
             />
             <select
               value={currFrom}
               onChange={(e) => setCurrFrom(e.target.value)}
               disabled={isLoading}
+              className="focus:outline-none flex p-3 h-14 text-white bg-transparent text-lg"
             >
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
@@ -63,6 +65,7 @@ export default function App() {
               value={currTo}
               onChange={(e) => setCurrTo(e.target.value)}
               disabled={isLoading}
+              className="focus:outline-none flex p-3 h-14 text-lg bg-transparent text-white"
             >
               <option value="USD">USD</option>
               <option value="EUR">EUR</option>
@@ -70,9 +73,11 @@ export default function App() {
               <option value="INR">INR</option>
             </select>
           </div>
-          <p>
-            {inputValue} {currFrom} = {convertedCurr} {currTo}
-          </p>
+          <div className="bg-white backdrop-blur-3xl bg-opacity-20 rounded-md mt-5">
+            <p className="text-3xl font-semibold text-white border border-white border-opacity-30 rounded-md  py-10 px-10 text-center">
+              {inputValue} <span>{currFrom}</span> = {convertedCurr} <span>{currTo}</span>
+            </p>
+          </div>
         </div>
       )}
     </main>
