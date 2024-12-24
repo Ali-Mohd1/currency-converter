@@ -44,13 +44,11 @@ export default function App() {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(Number(e.target.value))}
-            disabled={isLoading}
             className="focus:outline-none flex flex-1 py-3 px-4  text-white h-14 bg-transparent text-lg"
           />
           <select
             value={currFrom}
             onChange={(e) => setCurrFrom(e.target.value)}
-            disabled={isLoading}
             className="focus:outline-none flex p-3 h-14 text-white bg-transparent text-lg"
           >
             <option value="USD">USD</option>
@@ -61,7 +59,6 @@ export default function App() {
           <select
             value={currTo}
             onChange={(e) => setCurrTo(e.target.value)}
-            disabled={isLoading}
             className="focus:outline-none flex p-3 h-14 text-lg bg-transparent text-white"
           >
             <option value="USD">USD</option>
@@ -70,9 +67,9 @@ export default function App() {
             <option value="INR">INR</option>
           </select>
         </div>
-        <div className="bg-white backdrop-blur-3xl bg-opacity-20 rounded-md mt-5">
-          {isLoading ? <p className="text-2xl font-medium text-white">⏰ Loading...</p> : <p className="text-3xl font-semibold text-white border border-white border-opacity-30 rounded-md  py-10 px-10 text-center">
-            {inputValue} <span>{currFrom}</span> = {convertedCurr} <span>{currTo}</span>
+        <div className="bg-white backdrop-blur-3xl bg-opacity-20 rounded-md mt-5 py-10 px-10 text-center">
+          {isLoading ? <p className="text-2xl font-medium text-white">⏰ Loading...</p> : <p className="text-3xl font-semibold text-white">
+            {inputValue} <span className="font-medium text-xl">{currFrom}</span> = {convertedCurr} <span className="font-medium text-xl">{currTo}</span>
           </p>}
         </div>
       </div>
