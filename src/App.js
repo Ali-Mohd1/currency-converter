@@ -71,9 +71,9 @@ export default function App() {
           </select>
         </div>
         <div className="bg-white backdrop-blur-3xl bg-opacity-20 rounded-md mt-5">
-          <p className="text-3xl font-semibold text-white border border-white border-opacity-30 rounded-md  py-10 px-10 text-center">
+          {isLoading ? <p className="text-2xl font-medium text-white">⏰ Loading...</p> : <p className="text-3xl font-semibold text-white border border-white border-opacity-30 rounded-md  py-10 px-10 text-center">
             {inputValue} <span>{currFrom}</span> = {convertedCurr} <span>{currTo}</span>
-          </p>
+          </p>}
         </div>
       </div>
 
